@@ -1,0 +1,22 @@
+{
+  "name": "angular",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "ik0oo <kichigindv@gmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "~1.5.0",
+    "bootstrap": "~3.3.6"
+  }
+}
