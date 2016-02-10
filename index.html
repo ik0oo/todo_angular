@@ -5,95 +5,17 @@
 	<title>Angular TO DO</title>
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
-		<script src="bower_components/angular/angular.min.js"></script>
 </head>
 <body>
 	
 
-	<div class="container" ng-app="app" ng-controller="testCtrl">
-		<h1>TODO test</h1>
-		<ul class="list-group">
-			<li 
-				class="list-group-item"
-				ng-repeat="item in items">
-
-				<input
-					id="checkbox{{$index}}"
-					type="checkbox"
-					ng-model="item.isDone">
-
-				<!-- input field for change name -->
-				<input
-					type="text"
-					ng-model='item.name'
-					ng-show="inputText"
-					ng-keydown="($event.which === 13) ? inputText=!inputText : false">
-
-				<label for="checkbox{{$index}}" ng-show="!inputText">{{item.name}}</label>
-				<!-- name end -->
-
-				<button
-					ng-click="inputText=!inputText"
-					class="btn btn-sm btn-default pull-right"
-					type="button"
-					style="margin-left: 10px">
-				Rename</button>
-
-				<button
-					ng-click="remove($index)"
-					class="btn btn-sm btn-danger pull-right"
-					type="button">
-				Remove</button>
-				<div class="clearfix"></div>
-			</li>
-		</ul>
-
-		<h4>Controls</h4>
-		<div class="input-group">
-			<input
-				ng-model="addedItem"
-				type="text"
-				class="form-control"
-				placeholder="Add new item...">
-
-			<span class="input-group-btn">
-				<button
-					ng-click="add()"
-					class="btn btn-primary"
-					type="button">Add</button>
-			</span>
-		</div><!-- /input-group -->
-
-		<br>
-
-		<div class="btn-group" role="group" aria-label="...">
-			<button
-				type="button"
-				class="btn btn-success"
-				ng-click="doAll()">
-			Do it All</button>
-
-			<button
-				type="button"
-				class="btn btn-primary"
-				ng-click="undoAll()">
-			Undo it All</button>
-
-			<button
-				type="button"
-				class="btn btn-warning"
-				ng-click="removeAll()">
-			Remove All</button>
-
-			<button
-				type="button"
-				class="btn btn-danger"
-				ng-click="removeAllDone()">
-			Remove All of Done</button>
-		</div>
+	<div class="container" ng-app="app">
+		<div ng-view></div>
 	</div>
 
 
+	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/angular-route/angular-route.min.js"></script>
 	<script src="app/app.js"></script>
 </body>
 </html>
