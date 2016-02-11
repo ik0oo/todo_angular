@@ -1,8 +1,9 @@
 <h1>{{title}}</h1>
 <ul class="list-group">
+	<li class="list-group-item"><input type="text" placeholder="Search..." class="form-control" ng-model="search"/></li>
 	<li 
 		class="list-group-item"
-		ng-repeat="item in items">
+		ng-repeat="item in items | filter:search">
 
 		<input
 			id="checkbox{{$index}}"
